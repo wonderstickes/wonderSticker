@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wonder Stickers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Wonder Stickers</div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="cart-btn" class="cart-btn" aria-label="Open cart">
+      🛒 <span id="cart-count" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="site-title">Wonder Stickers</h1>
+        <p class="tagline">Convert your wonder into stickers</p>
+        <div class="hero-ctas">
+          <button id="browse-btn" class="btn outline">Browse Stickers</button>
+          <a class="btn primary" id="whatsapp-hero" href="https://wa.me/9220732618" target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+        <p class="microcopy">₹9 per sticker • Fast school delivery</p>
+      </div>
+      <div class="hero-samples">
+        <div class="sample sample-1">Sticker</div>
+        <div class="sample sample-2">Sticker</div>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog">
+      <h2>Our Sticker Collection</h2>
+      <div id="grid" class="grid">
+        <!-- JS will populate placeholders -->
+      </div>
+    </section>
+
+    <section id="order" class="custom-order">
+      <h2>Custom Stickers</h2>
+      <p>Have your own design idea? Send it on WhatsApp and get a custom sticker.</p>
+      <a class="btn primary" id="whatsapp-custom" href="https://wa.me/9220732618" target="_blank" rel="noopener">Order Custom Sticker</a>
+      <p class="fine-print">Custom size available (free size)</p>
+    </section>
+
+    <section class="pricing">
+      <div class="price-card">
+        <h3>Price</h3>
+        <p class="big">₹9 <small>/ sticker</small></p>
+        <ul>
+          <li>High-quality print</li>
+          <li>Aesthetic designs</li>
+          <li>Fast delivery in school</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>Message us on WhatsApp for orders or questions.</p>
+      <a class="btn primary" href="https://wa.me/9220732618" target="_blank" rel="noopener">Open WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2025 Wonder Stickers — Made with love.</footer>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart" class="close-btn">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="drawer-footer">
+      <div class="subtotal">Subtotal: <span id="subtotal">₹0</span></div>
+      <div class="drawer-actions">
+        <button id="copy-cart" class="btn outline">Copy order text</button>
+        <a id="checkout-whatsapp" class="btn primary" href="#" target="_blank" rel="noopener">Checkout via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
