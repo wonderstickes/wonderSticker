@@ -103,9 +103,14 @@ const cart = {
 // populate grid from IMAGE_LIST
 function populateGrid(){
   grid.innerHTML = '';
-  IMAGE_LIST.forEach((it, index) => {
+  IMAGE_LIST.forEach((it) => {
+
+    const OLD_PRICE = 12;
+    const NEW_PRICE = PRICE_PER; // 9
+
     const card = document.createElement('div');
     card.className = 'sticker-card';
+
     const thumb = document.createElement('img');
     thumb.className = 'sticker-thumb';
     thumb.src = it.file;
@@ -114,9 +119,21 @@ function populateGrid(){
     thumb.style.height = '92px';
     thumb.style.objectFit = 'cover';
     thumb.style.borderRadius = '10px';
+
+    // LABEL
     const label = document.createElement('div');
     label.className = 'sticker-label';
     label.textContent = it.name;
+
+    // PRICE ROW (old + new)
+    const priceRow = document.createElement('div');
+    priceRow.className = 'price-row';
+    priceRow.innerHTML = `
+      <span class="old-price">₹${OLD_PRICE}</span>
+      <span class="new-price">₹${NEW_PRICE}</span>
+    `;
+
+    // ADD BUTTON
     const addBtn = document.createElement('button');
     addBtn.className = 'btn outline';
     addBtn.textContent = 'Add to cart';
@@ -125,12 +142,16 @@ function populateGrid(){
       addBtn.textContent = 'Added ✓';
       setTimeout(()=> addBtn.textContent = 'Add to cart',900);
     });
+
+    // APPEND ITEMS
     card.appendChild(thumb);
     card.appendChild(label);
+    card.appendChild(priceRow);
     card.appendChild(addBtn);
     grid.appendChild(card);
-  });
+  });
 }
+
 
 // cart UI update
 function updateCartUI(){
