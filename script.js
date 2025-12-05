@@ -190,7 +190,7 @@ function updateCartUI(){
   }
   subtotalEl.textContent = '₹' + cart.subtotal();
   const message = cart.summaryText();
-  checkoutWa.href = 'https://wa.me/9220732618?text=' + encodeURIComponent(message);
+  checkoutWa.href = 'https://wa.me/9220727618?text=' + encodeURIComponent(message);
 }
 
 // drawer open/close
